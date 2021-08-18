@@ -2,8 +2,8 @@ README.MD
 -----
 
 **Pre Requisites**
-* Use Android Studio Arctic Fox - Other versions are unlikely to work properly.
-* Ensure that your Android Studio Java version is set to JDK 11. `Embedded JDK` works great.
+* Use Android Studio Arctic Fox (Stable) - Other versions are unlikely to work properly.
+* Ensure that your Android Studio Java version is set to JDK 11. `Embedded JDK` works great, but you can also point to a specific one via
 
 **ATM Code Challenge**
 Today's code challenge is straight forward. Inside this project you'll find some files which contain an activity, fragment, and a networking service. The goal here is to fetch some data and display the data matching the designs. Some of the work has even been done for you!
