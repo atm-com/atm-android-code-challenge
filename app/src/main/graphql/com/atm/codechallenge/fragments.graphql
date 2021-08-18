@@ -1,0 +1,12 @@
+fragment CourseFragment on Course {
+    id
+    title
+    description
+    isFeatured
+    bannerImageUrl
+    previewImageUrl
+    previewImageUrl
+    rewardAmount
+    rewardType
+    status
+}

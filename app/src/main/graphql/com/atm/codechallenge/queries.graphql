@@ -1,0 +1,20 @@
+query AvailableCourses($categoryId: ID, $isSponsored: Boolean!, $first: Int) {
+    availableCourses(categoryId: $categoryId, isSponsored: $isSponsored, first: $first) {
+        edges {
+            node {
+                ...CourseFragment
+            }
+            cursor
+        }
+        pageInfo {
+            hasNextPage
+            endCursor
+        }
+    }
+}
+
+query CourseById($id: ID!) {
+    course(courseId: $id) {
+        ...CourseFragment
+    }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Schema",
+  "schemaPath": "schema.graphqls",
+  "extensions": {
+    "endpoints": {
+      "Default GraphQL Endpoint": {
+        "url": "https://api.dev.learnandearn.com/graphql",
+        "introspect": true
+      }
+    }
+  }
+}
