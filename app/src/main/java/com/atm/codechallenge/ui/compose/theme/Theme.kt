@@ -40,8 +40,8 @@ fun CodeChallengeTheme(
 
     MaterialTheme(
         colors = colors,
-//        typography = Typography,
-//        shapes = Shapes,
+        typography = Typography,
+        shapes = Shapes,
         content = content
     )
 }

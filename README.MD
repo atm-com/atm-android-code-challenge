@@ -2,8 +2,8 @@ README.MD
 -----
 
 **Pre Requisites**
-* Use Android Studio Beta (Arctic Fox) or Preview to open and update this project.
-* DO NOT USE Android Studio Stable -- It's unlikely this will work.
+* Use Android Studio Arctic Fox - Other versions are unlikely to work properly.
+* Ensure that your Android Studio Java version is set to JDK 11. `Embedded JDK` works great.
 
 **ATM Code Challenge**
 Today's code challenge is straight forward. Inside this project you'll find some files which contain an activity, fragment, and a networking service. The goal here is to fetch some data and display the data matching the designs. Some of the work has even been done for you!
@@ -17,7 +17,7 @@ On the 2nd screen. The `Start` button should show a toast which says "Course wit
 As currently implemented networking may be happening on the main thread... consider an approach which takes that work off the main thread.
 
 **Assumptions**
-* If a course has a reward type `PL`, go ahead and assume that means "advocado". An asset file is included in the project.
+* If a course has a reward type `PL`, go ahead and assume that means "avocado". An asset file is included in the project.
 
 * If a course does not have a `bannerImageUrl` or a `previewImageUrl` go ahead and use any solid color to display as the image. Note here that the preview image should display on the list screen and the banner image should display on the detail screen.
 
@@ -43,6 +43,7 @@ As currently implemented networking may be happening on the main thread... consi
 * Extend the Service to save to a database -- without changing the interface
 * Light vs Dark Themes
 * Support Rotation
+* Error handling. What if the API doesn't return, or throws an error?
 
 **What to submit** 
 Please keep all files you wish to submit within this project folder. Zip it up and email it back to us. We'll review and get back to you as quickly as we can.
