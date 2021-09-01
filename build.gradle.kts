@@ -1,17 +1,20 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
-    val compose_version by extra("1.0.0")
-    val apollo_version by extra("2.5.4")
-    val lifecycle_version by extra("2.3.1")
+    val composeVersion by extra("1.0.0")
+    val apolloVersion by extra("3.0.0-alpha03")
+    val lifecycleVersion by extra("2.3.1")
     repositories {
         google()
         maven(url = "https://maven.google.com")
+        maven {
+            url = uri("https://plugins.gradle.org/m2/")
+        }
         mavenCentral()
     }
     dependencies {
-        classpath("com.android.tools.build:gradle:7.0.1")
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.10")
-        classpath("com.apollographql.apollo:apollo-gradle-plugin:$apollo_version")
+        classpath("com.android.tools.build:gradle:7.0.2")
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.30")
+        classpath("com.apollographql.apollo3:apollo-gradle-plugin:$apolloVersion")
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle.kts files

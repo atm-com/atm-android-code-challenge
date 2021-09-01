@@ -1,8 +1,8 @@
-package com.atm.codechallenge.network.models
+package com.antmoney.kmm_services.network.models
 
-import com.atm.codechallenge.fragment.CourseFragment
-import com.atm.codechallenge.type.AvailabilityStatusEnum
-import com.atm.codechallenge.type.RewardTypeEnum
+import fragment.CourseFragment
+import type.AvailabilityStatusEnum
+import type.RewardTypeEnum
 
 data class Course(
     val id: String,
@@ -15,19 +15,17 @@ data class Course(
     val status: AvailabilityStatusEnum
 ) {
     constructor(data: CourseFragment) : this(
-        data.id(),
-        data.title(),
-        data.description(),
-        data.bannerImageUrl(),
-        data.previewImageUrl(),
-        data.rewardAmount() ?: "0",
-        data.rewardType() ?: RewardTypeEnum.USD,
-        data.status()
+        data.id,
+        data.title,
+        data.description,
+        data.bannerImageUrl,
+        data.previewImageUrl,
+        data.rewardAmount ?: "0",
+        data.rewardType ?: RewardTypeEnum.usd,
+        data.status
     )
 
     override fun toString(): String {
         return "Course(id='$id', title=$title, description=$description, bannerImageUrl=$bannerImageUrl, previewImageUrl=$previewImageUrl, rewardAmount='$rewardAmount', rewardType=$rewardType, status=$status)"
     }
-
-
 }

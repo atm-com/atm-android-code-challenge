@@ -1,4 +1,4 @@
-query AvailableCourses($categoryId: ID, $isSponsored: Boolean!, $first: Int) {
+query AvailableCourses($categoryId: ID, $isSponsored: Boolean, $first: Int) {
     availableCourses(categoryId: $categoryId, isSponsored: $isSponsored, first: $first) {
         edges {
             node {
