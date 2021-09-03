@@ -22,10 +22,10 @@ class MainActivity : FragmentActivity() {
             }.commit()
         }
 
+
         // Basic GraphQL Query using a Coroutine. Note: This is happening on the main thread.
         // Probably it shouldn't.
         lifecycleScope.launchWhenResumed {
-//            GreetingKMM()
 //            val courses = CourseService.courses()
 //            val courseById = CourseService.courseById("08c75d52-84dd-4605-ab34-6da007d4787e")
 //

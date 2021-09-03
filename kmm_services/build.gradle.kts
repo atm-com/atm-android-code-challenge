@@ -5,12 +5,16 @@ plugins {
     kotlin("native.cocoapods")
     id("com.apollographql.apollo3")
     id("com.android.library")
+    id("maven-publish")
 }
 
-version = "1.0"
+group = "com.antmoney.shared"
+version = "1.0.0"
 
 kotlin {
-    android()
+    android {
+        publishLibraryVariants("release", "debug")
+    }
 
     val iosTarget: (String, KotlinNativeTarget.() -> Unit) -> KotlinNativeTarget = when {
         System.getenv("SDK_NAME")?.startsWith("iphoneos") == true -> ::iosArm64
@@ -18,7 +22,13 @@ kotlin {
         else -> ::iosX64
     }
 
-    iosTarget("ios") {}
+    iosTarget("ios") {
+//        binaries {
+//            framework {
+//                baseName = "kmm_shared"
+//            }
+//        }
+    }
 
     cocoapods {
         summary = "KMM Shared Service Tier"
@@ -33,12 +43,7 @@ kotlin {
             dependencies {
                 implementation("com.apollographql.apollo3:apollo-runtime:${rootProject.extra["apolloVersion"]}")
 //                implementation("com.apollographql.apollo3:apollo-normalized-cache-sqlite:${rootProject.extra["apolloVersion"]}")
-                implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-core"){
-                    version {
-                        strictly("1.5.0-native-mt")
-                    }
-                }
-
+                implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2")
             }
         }
         val commonTest by getting {
@@ -59,6 +64,18 @@ kotlin {
         val iosMain by getting
         val iosTest by getting
     }
+
+//    val publicationsFromMainHost = listOf(jvm(), js()).map { it.name } + "kotlinMultiplatform"
+//    publishing {
+//        publications {
+//            matching { it.name in publicationsFromMainHost }.all {
+//                val targetPublication = this@all
+//                tasks.withType<AbstractPublishToMaven>()
+//                    .matching { it.publication == targetPublication }
+//                    .configureEach { onlyIf { findProperty("isMainHost") == "true" } }
+//            }
+//        }
+//    }
 }
 
 apollo {
@@ -72,5 +89,10 @@ android {
     defaultConfig {
         minSdk = 21
         targetSdk = 30
+    }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
     }
 }

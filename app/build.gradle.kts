@@ -53,14 +53,15 @@ dependencies {
     implementation("androidx.compose.ui:ui:${rootProject.extra["composeVersion"]}")
     implementation("androidx.compose.material:material:${rootProject.extra["composeVersion"]}")
     implementation("androidx.compose.ui:ui-tooling:${rootProject.extra["composeVersion"]}")
-    implementation("androidx.compose.runtime:runtime:1.0.1")
-    implementation("androidx.compose.compiler:compiler:1.0.1")
+    implementation("androidx.compose.runtime:runtime:${rootProject.extra["composeVersion"]}")
+    implementation("androidx.compose.compiler:compiler:${rootProject.extra["composeVersion"]}")
     implementation("androidx.activity:activity-compose:1.3.1")
     implementation("androidx.fragment:fragment-ktx:1.3.6")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:${rootProject.extra["lifecycleVersion"]}")
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:${rootProject.extra["lifecycleVersion"]}")
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:${rootProject.extra["lifecycleVersion"]}")
     implementation("androidx.lifecycle:lifecycle-common-java8:2.3.1")
+//    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.0")
 
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.3")
@@ -69,4 +70,6 @@ dependencies {
 
     compileOnly(group= "javax.annotation", name= "javax.annotation-api", version= "1.3.2")
     compileOnly(group= "org.jetbrains", name= "annotations", version= "13.0")
+
+    implementation("com.antmoney.shared:kmm_services:1.0.0")
 }
