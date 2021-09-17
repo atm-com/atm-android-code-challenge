@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.lifecycleScope
+import com.antmoney.kmm_services.GreetingKMM
 import com.atm.codechallenge.databinding.ActivityMainBinding
 import com.atm.codechallenge.shared.viewBinding
 import com.atm.codechallenge.ui.fragment.CoursesFragment

@@ -5,6 +5,7 @@ import android.view.View
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.fragment.app.Fragment
+import com.antmoney.kmm_services.GreetingKMM
 import com.atm.codechallenge.R
 import com.atm.codechallenge.databinding.FragmentCoursesBinding
 import com.atm.codechallenge.shared.viewBinding
@@ -23,7 +24,7 @@ class CoursesFragment : Fragment(R.layout.fragment_courses) {
             CodeChallengeTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(color = MaterialTheme.colors.background) {
-                    Greeting("Courses Screen")
+                    Greeting(GreetingKMM().greeting())
                 }
             }
         }
