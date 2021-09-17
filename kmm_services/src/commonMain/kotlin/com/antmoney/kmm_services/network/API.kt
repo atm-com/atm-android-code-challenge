@@ -7,7 +7,7 @@ object API {
 
     val apolloClient = ApolloClient(
         networkTransport = HttpNetworkTransport(
-            serverUrl = "https://api.github.com/graphql",
+            serverUrl = "https://api.dev.learnandearn.com/graphql",
             headers = mapOf(
                 "Accept" to "application/json",
                 "Authorization" to "auth-token",
