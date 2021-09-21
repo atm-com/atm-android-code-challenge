@@ -33,9 +33,17 @@ kotlin {
     cocoapods {
         summary = "KMM Shared Service Tier"
         homepage = "Link to the Shared Module homepage"
-        ios.deploymentTarget = "14.1"
+        ios.deploymentTarget = "13.0"
         frameworkName = "kmm_services"
+//        this.specRepos {
+//            this.url("https://github.com/atm-com/atm-ios-specs.git")
+//        }
+
+        podfile = project.file("/Users/esteban/Repos/atm-ios-code-challenge/atm-code-challenge/Podfile")
         // set path to your ios project podfile, e.g. podfile = project.file("../iosApp/Podfile")
+        // Maps custom Xcode configuration to NativeBuildType
+//        xcodeConfigurationToNativeBuildType["CUSTOM_DEBUG"] = NativeBuildType.DEBUG
+//        xcodeConfigurationToNativeBuildType["CUSTOM_RELEASE"] = NativeBuildType.RELEASE
     }
     
     sourceSets {
