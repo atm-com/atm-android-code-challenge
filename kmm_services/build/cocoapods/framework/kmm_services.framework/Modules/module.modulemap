@@ -1,6 +1,0 @@
-framework module kmm_services {
-  umbrella header "placeholder.h"
-
-  export *
-  module * { export * }
-}
