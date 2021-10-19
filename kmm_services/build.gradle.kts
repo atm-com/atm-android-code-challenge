@@ -3,6 +3,7 @@ import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
 plugins {
     kotlin("multiplatform")
     kotlin("native.cocoapods")
+    id("com.squareup.sqldelight")
     id("com.apollographql.apollo3")
     id("com.android.library")
     id("maven-publish")
@@ -50,8 +51,7 @@ kotlin {
         val commonMain by getting {
             dependencies {
                 implementation("com.apollographql.apollo3:apollo-runtime:${rootProject.extra["apolloVersion"]}")
-//                implementation("com.apollographql.apollo3:apollo-normalized-cache-sqlite:${rootProject.extra["apolloVersion"]}")
-                implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2")
+                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2")
             }
         }
         val commonTest by getting {
@@ -62,6 +62,9 @@ kotlin {
         }
         val androidMain by getting {
             dependsOn(commonMain)
+            dependencies {
+                implementation("com.squareup.sqldelight:android-driver:${rootProject.extra["sqlDelightVersion"]}")
+            }
         }
         val androidTest by getting {
             dependencies {
@@ -69,7 +72,12 @@ kotlin {
                 implementation("junit:junit:4.13.2")
             }
         }
-        val iosMain by getting
+        val iosMain by getting {
+            dependencies {
+                implementation("com.squareup.sqldelight:native-driver:${rootProject.extra["sqlDelightVersion"]}")
+
+            }
+        }
         val iosTest by getting
     }
 
@@ -103,4 +111,14 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+}
+
+sqldelight {
+    database("KmmServicesDB") {
+        packageName = "com.antmoney.kmm_services"
+        sourceFolders = listOf("sqldelight")
+//        schemaOutputDirectory = file("build/sqldelight")
+        verifyMigrations = true
+    }
+    linkSqlite = false
 }

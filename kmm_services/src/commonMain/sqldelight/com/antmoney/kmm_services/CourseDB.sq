@@ -1,0 +1,26 @@
+CREATE TABLE IF NOT EXISTS course_db (
+    id TEXT NOT NULL,
+    title TEXT,
+    description TEXT,
+    banner_image_url TEXT,
+    preview_image_url TEXT,
+    reward_amount TEXT,
+    PRIMARY KEY(id)
+);
+
+insertOrReplace:
+REPLACE INTO course_db(
+    id,
+    title,
+    description,
+    banner_image_url,
+    preview_image_url,
+    reward_amount
+)
+VALUES ?;
+
+selectAll:
+SELECT * FROM course_db;
+
+deleteAll:
+DELETE FROM course_db;

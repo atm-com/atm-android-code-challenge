@@ -10,9 +10,7 @@ data class Course(
     val description: String?,
     val bannerImageUrl: String?,
     val previewImageUrl: String?,
-    val rewardAmount: String,
-    val rewardType: RewardTypeEnum,
-    val status: AvailabilityStatusEnum
+    val rewardAmount: String
 ) {
     constructor(data: CourseFragment) : this(
         data.id,
@@ -20,12 +18,10 @@ data class Course(
         data.description,
         data.bannerImageUrl,
         data.previewImageUrl,
-        data.rewardAmount ?: "0",
-        data.rewardType ?: RewardTypeEnum.usd,
-        data.status
+        data.rewardAmount ?: "0"
     )
 
     override fun toString(): String {
-        return "Course(id='$id', title=$title, description=$description, bannerImageUrl=$bannerImageUrl, previewImageUrl=$previewImageUrl, rewardAmount='$rewardAmount', rewardType=$rewardType, status=$status)"
+        return "Course(id='$id', title=$title, description=$description, bannerImageUrl=$bannerImageUrl, previewImageUrl=$previewImageUrl, rewardAmount='$rewardAmount')"
     }
 }
